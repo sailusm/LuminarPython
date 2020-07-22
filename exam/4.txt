@@ -1,0 +1,10 @@
+create table emp2(eid int(30),enam varchar(40),desig varchar(40),email varchar(50),salary varchar(50));
+
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\emp2.csv' 
+INTO TABLE emp2
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+select salary,count(*) from emp2 group by salary
